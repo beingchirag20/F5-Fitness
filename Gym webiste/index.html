@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>F5 Fitness - Your journey to fitness starts here</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom CSS -->
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100vh; /* Full viewport height */
+        position: relative;
+        overflow: hidden; /* Prevent scrolling */
+      }
+
+      .background-image-left,
+      .background-image-right {
+        display: none; /* Hidden by default */
+      }
+
+      @media (min-width: 1024px) {
+        .background-image-left,
+        .background-image-right {
+          display: block; /* Show on larger screens */
+          position: absolute;
+          top: 0;
+          width: 50%;
+          height: 100%;
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center center;
+          z-index: 1; /* Behind the navbar */
+        }
+
+        .background-image-left {
+          left: 0;
+          background-image: url("assets/body_2.jpg");
+          background-size: auto 100%; /* Adjust size as needed */
+          background-position: left center; /* Move image to the left side */
+        }
+
+        .background-image-right {
+          right: 0;
+          background-image: url("assets/wolv.jpg");
+          background-size: auto 100%; /* Adjust size as needed */
+          background-position: right center; /* Move image to the right side */
+          top: 4rem; /* Move image down to avoid sticking to navbar */
+        }
+      }
+
+      .navbar {
+        position: absolute; /* Ensure navbar is on top of background images */
+        width: 100%;
+        z-index: 10; /* High z-index to make sure it's above the background images */
+      }
+
+      .menu {
+        display: none; /* Hidden by default */
+        transition: opacity 0.3s ease; /* Smooth transition for menu visibility */
+        opacity: 0; /* Initially hidden */
+      }
+
+      .menu-active {
+        display: block; /* Display when active */
+        opacity: 1; /* Fully visible */
+      }
+
+      .card {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        max-width: 600px;
+        padding: 2rem;
+        background-color: black;
+        border-radius: 10px;
+        z-index: 2;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        text-align: center; /* Center text within the card */
+      }
+
+      .card-content {
+        color: bisque;
+        font-family: Georgia, "Times New Roman", Times, serif;
+      }
+
+      .card-content h1 {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 1s ease-out forwards;
+      }
+
+      .card-content h2 {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 1s ease-out forwards;
+        animation-delay: 0.5s;
+      }
+
+      .card-content p {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 1s ease-out forwards;
+        animation-delay: 1s;
+      }
+
+      /* Keyframes for the animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .button-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 2rem; /* Add space above the button */
+      }
+
+      .button-container .button {
+        padding: 1rem 2rem;
+        background-color: #333;
+        color: white;
+        border-radius: 0.5rem;
+        font-size: 1rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        cursor: pointer;
+        border: none;
+        transition: background-color 0.3s ease;
+      }
+
+      .button-container .button:hover {
+        background-color: #555;
+      }
+
+      /* Responsive styles */
+      @media (max-width: 1024px) {
+        .background-image-left {
+          display: block; /* Show first image on mobile screens */
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: auto;
+          background-image: url("");
+          background-size: cover;
+          background-position: center bottom;
+          z-index: 0; /* Behind the card */
+        }
+
+        .card {
+          width: 90%;
+          padding: 1rem;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(
+            -50%,
+            -50%
+          ); /* Center the card vertically and horizontally */
+          margin: 0; /* Remove any default margin */
+          z-index: 1; /* Above the background image */
+          background-color: black;
+          border-radius: 10px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .card-content {
+          font-size: 1.2rem; /* Adjust font size for mobile screens */
+        }
+      }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Grey+Qo&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="bg-black text-white">
+    <!-- Background Images -->
+    <div class="background-image-left"></div>
+    <div class="background-image-right"></div>
+
+    <!-- Navbar -->
+    <nav class="bg-black p-4 shadow-lg navbar">
+      <div class="container mx-auto flex justify-between items-center">
+        <div class="text-2xl font-bold">F5 Fitness</div>
+        <div class="hidden md:flex space-x-6">
+          <a href="#" class="hover:text-red-500 transition duration-300"
+            >Home</a
+          >
+          <a href="about.html" class="hover:text-red-500 transition duration-300"
+            >About</a
+          >
+          <a href="services.html" class="hover:text-red-500 transition duration-300"
+            >Services</a
+          >
+          <a
+            href="contacts.html"
+            class="hover:text-red-500 transition duration-300"
+            >Contacts</a
+          >
+        </div>
+        <button id="menu-button" class="md:hidden flex items-center">
+          <!-- Hamburger icon -->
+          <svg
+            class="w-8 h-8 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <div id="menu" class="menu mt-4 md:hidden">
+        <a
+          href="#"
+          class="block py-2 px-4 hover:bg-gray-700 transition duration-300"
+          >Home</a
+        >
+        <a
+          href="about.html"
+          class="block py-2 px-4 hover:bg-gray-700 transition duration-300"
+          >About</a
+        >
+        <a
+          href="services.html"
+          class="block py-2 px-4 hover:bg-gray-700 transition duration-300"
+          >Services</a
+        >
+        <a
+          href="contacts.html"
+          class="block py-2 px-4 hover:bg-gray-700 transition duration-300"
+          >Contacts</a
+        >
+      </div>
+    </nav>
+
+    <!-- Card -->
+    <div class="card">
+      <div class="card-content">
+        <h1 class="text-4xl font-bold mb-4">Welcome to F5 Fitness</h1>
+        <h2 class="text-2xl mb-4">Your journey to fitness starts here</h2>
+        <p class="text-lg">
+          Discover the best workouts and nutrition tips tailored to your needs.
+          Start your fitness journey with us today!
+        </p>
+
+        <!-- Button Container -->
+        <div class="button-container">
+          <a href="contacts.html"><button class="button">Get Started</button></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- About Page -->
+
+    <script>
+      document
+        .getElementById("menu-button")
+        .addEventListener("click", function () {
+          var menu = document.getElementById("menu");
+          menu.classList.toggle("menu-active");
+        });
+    </script>
+  </body>
+</html>

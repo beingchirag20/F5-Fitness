@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - F5 Fitness</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .navbar {
+            position: absolute;
+            width: 100%;
+            z-index: 10;
+        }
+
+        .menu {
+            display: none;
+            transition: opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        .menu-active {
+            display: block;
+            opacity: 1;
+        }
+
+        .fade-in {
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .slide-up {
+            animation: slideUp 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-black text-gray-300">
+
+    <!-- Navbar -->
+    <nav class="bg-black p-4 shadow-lg navbar">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold text-white">F5 Fitness</div>
+            <div class="hidden md:flex space-x-6">
+                <a href="index.html" class="hover:text-red-500 transition duration-300">Home</a>
+                <a href="#" class="hover:text-red-500 transition duration-300">About</a>
+                <a href="services.html" class="hover:text-red-500 transition duration-300">Services</a>
+                <a href="contacts.html" class="hover:text-red-500 transition duration-300">Contacts</a>
+            </div>
+            <button id="menu-button" class="md:hidden flex items-center">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        <div id="menu" class="menu mt-4 md:hidden">
+            <a href="index.html" class="block py-2 px-4 hover:bg-gray-700 transition duration-300">Home</a>
+            <a href="#" class="block py-2 px-4 hover:bg-gray-700 transition duration-300">About</a>
+            <a href="services.html" class="block py-2 px-4 hover:bg-gray-700 transition duration-300">Services</a>
+            <a href="contacts.html" class="block py-2 px-4 hover:bg-gray-700 transition duration-300">Contacts</a>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="text-center py-20 pt-16 fade-in">
+        <h1 class="text-4xl font-bold text-white mt-10">About <span class="text-yellow-500">F5 Fitness</span></h1>
+        <p class="mt-4 text-gray-400">Your journey to fitness begins here</p>
+    </header>
+
+    <!-- Mission Section -->
+    <section class="container mx-auto px-6 py-5 slide-up">
+        <h2 class="text-3xl font-semibold text-yellow-500 mb-6">Our Mission</h2>
+        <p class="leading-relaxed">At F5 Fitness, our mission is to empower individuals to achieve their health and fitness goals. We believe in providing the tools, guidance, and community support necessary for everyone to lead a healthy, active life.</p>
+    </section>
+
+    <!-- Who We Are Section -->
+    <section class="container mx-auto px-6 py-12 slide-up">
+        <h2 class="text-3xl font-semibold text-yellow-500 mb-6">Who We Are</h2>
+        <p class="leading-relaxed">Founded in [Year], F5 Fitness is more than just a gym—it’s a community. Our team of experienced trainers and wellness coaches are committed to helping you succeed, whether you're a fitness enthusiast or just starting your journey.</p>
+    </section>
+
+    <!-- What We Offer Section -->
+    <section class="container mx-auto px-6 py-12 slide-up">
+        <h2 class="text-3xl font-semibold text-yellow-500 mb-6">What We Offer</h2>
+        <ul class="space-y-4">
+            <li class="leading-relaxed"><span class="text-yellow-500 font-bold">State-of-the-Art Facilities:</span> Our gym features the latest fitness technology, from cardio machines to functional training areas.</li>
+            <li class="leading-relaxed"><span class="text-yellow-500 font-bold">Group Classes:</span> We offer a variety of classes, including HIIT, yoga, and pilates, catering to all fitness levels.</li>
+            <li class="leading-relaxed"><span class="text-yellow-500 font-bold">Personal Training:</span> Work one-on-one with our certified trainers to achieve your specific fitness goals.</li>
+            <li class="leading-relaxed"><span class="text-yellow-500 font-bold">Nutrition Coaching:</span> Our nutrition experts will help you develop healthy eating habits that complement your fitness routine.</li>
+            <li class="leading-relaxed"><span class="text-yellow-500 font-bold">Community Events:</span> Participate in our fitness challenges, workshops, and social events to stay motivated and connected.</li>
+        </ul>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="container mx-auto px-6 py-12 slide-up">
+        <h2 class="text-3xl font-semibold text-yellow-500 mb-6">Why Choose Us?</h2>
+        <p class="leading-relaxed">At F5 Fitness, we pride ourselves on creating an inclusive environment where everyone is welcome. Our expert team is here to guide you, and our flexible memberships ensure that you find a plan that works for you.</p>
+        <p class="leading-relaxed mt-4">Conveniently located at [Location Details], we’re easy to access and ready to support you on your fitness journey.</p>
+    </section>
+
+    <!-- Meet Our Team Section -->
+    <section class="container mx-auto px-6 py-12 slide-up">
+        <h2 class="text-3xl font-semibold text-yellow-500 mb-6">Meet Our Team</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg fade-in">
+                <h3 class="text-xl font-bold text-white">[Trainer Name]</h3>
+                <p class="mt-2 text-gray-400">[Brief bio highlighting expertise and specialties]</p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg fade-in">
+                <h3 class="text-xl font-bold text-white">[Trainer Name]</h3>
+                <p class="mt-2 text-gray-400">[Brief bio highlighting expertise and specialties]</p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg fade-in">
+                <h3 class="text-xl font-bold text-white">[Trainer Name]</h3>
+                <p class="mt-2 text-gray-400">[Brief bio highlighting expertise and specialties]</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="text-center py-12 bg-gray-800 slide-up">
+        <h2 class="text-4xl font-bold text-white">Join Us Today!</h2>
+        <p class="mt-4 text-gray-400">Ready to take the next step in your fitness journey? Visit F5 Fitness and discover how we can help you achieve your goals.</p>
+        <a href="contacts.html" class="mt-6 inline-block px-8 py-4 bg-yellow-500 text-gray-900 font-semibold rounded-lg shadow-md transition-transform transform hover:scale-105">Sign Up for a Free Trial</a>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="text-center py-6 text-gray-500 bg-gray-900">
+        <p>&copy; [2024] F5 Fitness. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu Toggle -->
+    <script>
+        document.getElementById('menu-button').addEventListener('click', function () {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('menu-active');
+        });
+    </script>
+
+</body>
+
+</html>
